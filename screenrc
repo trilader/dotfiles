@@ -1,0 +1,11 @@
+startup_message off
+backtick 1 0 0 whoami
+hardstatus on
+hardstatus alwayslastline "%w %=%1`@%H | %c"
+
+bind k   #disable kill window
+bind ^k  #disable kill window
+bind .   #disable write termcap
+bind h   #disable write hardcopy
+bind \\  #disable terminate screen
+
