@@ -31,3 +31,7 @@ antigen bundle virtualenv
 antigen bundle screen
 antigen theme gallifrey
 antigen-apply
+
+if [ -e ".autoscreen" -a -n "$(which screen)" ]; then
+    [ -z "$STY" ] && (screen -qx || screen)
+fi
