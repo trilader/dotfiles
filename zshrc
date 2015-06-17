@@ -11,6 +11,13 @@ for i in {${#HOST_PARTS}..1}; do
     fi
 done
 
+def update-dotfiles()
+{
+    pushd $__DOTFILES > /dev/null
+    git pull
+    popd > /dev/null
+}
+
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 export MOSH_TITLE_NOPREFIX=1
 export EDITOR=vim
@@ -35,3 +42,4 @@ antigen-apply
 if [ -e ".autoscreen" -a -n "$(which screen)" ]; then
     [ -z "$STY" ] && (screen -qx || screen)
 fi
+
