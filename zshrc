@@ -18,6 +18,18 @@ def update-dotfiles()
     popd > /dev/null
 }
 
+if [ -f "/etc/gentoo-release" ]; then
+    def open-gentoobug()
+    {
+        if [ -z "$1" ]; then
+            echo "Usage: open-gentoobug <bug-id>"
+            return 1
+        fi
+        xdg-open "https://bugs.gentoo.org/show_bug.cgi?id=$1"
+        return 0
+    }
+fi
+
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 export MOSH_TITLE_NOPREFIX=1
 export EDITOR=vim
