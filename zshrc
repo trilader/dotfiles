@@ -28,6 +28,10 @@ if [ -f "/etc/gentoo-release" ]; then
         xdg-open "https://bugs.gentoo.org/show_bug.cgi?id=$1"
         return 0
     }
+
+    alias sync-portage='sudo eix-sync'
+    alias update-world='sudo emerge -avDNu --with-bdeps=y @world'
+    alias estimate-update='emerge -DNup @world|genlop -p'
 fi
 
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
@@ -35,8 +39,8 @@ export MOSH_TITLE_NOPREFIX=1
 export EDITOR=vim
 
 alias watch='watch -c'
-alias estimate-update='emerge -DNup @world|genlop -p'
 alias fuck='sudo $(fc -ln -1)'
+
 # ctrl-s will no longer freeze the terminal.
 stty erase "^?"
 
