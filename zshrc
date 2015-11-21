@@ -42,6 +42,7 @@ export EDITOR=vim
 
 alias watch='watch -c'
 alias fuck='sudo $(fc -ln -1)'
+alias ddstatus='dd status=progress'
 
 # ctrl-s will no longer freeze the terminal.
 stty erase "^?"
