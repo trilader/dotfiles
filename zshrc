@@ -59,6 +59,6 @@ antigen theme gallifrey
 antigen-apply
 
 if [ -e ".autoscreen" -a -n "$(which screen)" ]; then
-    [ -z "$STY" ] && (screen -qx || screen)
+    [ -z "$SSH_CONNECTION" ] && (screen -qx || screen)
 fi
 
