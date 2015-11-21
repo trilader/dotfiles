@@ -31,6 +31,8 @@ if [ -f "/etc/gentoo-release" ]; then
 
     alias sync-portage='sudo eix-sync'
     alias update-world='sudo emerge -avDNu --with-bdeps=y @world'
+    alias preserved-rebuild='sudo emerge -a @preserved-rebuild'
+    alias depclean-world='sudo emerge -ac'
     alias estimate-update='emerge -DNup @world|genlop -p'
 fi
 
