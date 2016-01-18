@@ -48,7 +48,7 @@ alias ddstatus='dd status=progress'
 stty erase "^?"
 
 antigen use oh-my-zsh
-antigen bundle colored-man
+antigen bundle colored-man-pages
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle history-substring-search
 antigen bundle mosh
