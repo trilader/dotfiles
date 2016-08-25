@@ -43,6 +43,7 @@ export EDITOR=vim
 alias watch='watch -c'
 alias fuck='sudo $(fc -ln -1)'
 alias ddstatus='dd status=progress'
+alias sddstatus='sudo dd status=progress'
 
 # ctrl-s will no longer freeze the terminal.
 stty erase "^?"
@@ -63,8 +64,17 @@ def autoquote()
     for f in $(cat); do echo -n "'$f', "; done
 }
 
+def playtwitch()
+{
+    if [ -z "$1" ]; then
+         echo "Expected channel name as first parameter"
+         return 1
+    fi
+    xdg-open "https://player.twitch.tv?channel=${1}&html5"
+}
 
 if [ -e ".autoscreen" -a -n "$(which screen)" ]; then
     [ -z "$SSH_CONNECTION" ] && (screen -qx || screen)
 fi
 
+# vim: set ai sw=4 ts=4 expandtab:
