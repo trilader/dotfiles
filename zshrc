@@ -58,6 +58,12 @@ antigen bundle screen
 antigen theme gallifrey
 antigen-apply
 
+def autoquote()
+{
+    for f in $(cat); do echo -n "'$f', "; done
+}
+
+
 if [ -e ".autoscreen" -a -n "$(which screen)" ]; then
     [ -z "$SSH_CONNECTION" ] && (screen -qx || screen)
 fi
