@@ -75,6 +75,19 @@ def playtwitch()
     xdg-open "https://player.twitch.tv?channel=${1}&html5"
 }
 
+def sltwitch()
+{
+    CHANNEL=$1
+    shift
+    if [ -z "$CHANNEL" ]; then
+         echo "Expected channel name as first parameter"
+         return 1
+    fi
+    QUALITY="best"
+    ARGS="--player mpv --retry-streams 60 --twitch-disable-hosting --default-stream $QUALITY"
+    streamlink $=ARGS "twitch.tv/$CHANNEL" $@
+}
+
 if [ -e ".autoscreen" -a -n "$(which screen)" ]; then
     [ -z "$SSH_CONNECTION" ] && (screen -qx || screen)
 fi
