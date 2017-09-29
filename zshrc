@@ -1,3 +1,5 @@
+# kate: syntax zsh;
+
 export __DOTFILES=$(dirname $(readlink -f ${(%):-%N}))
 
 source $__DOTFILES/antigen/antigen.zsh
