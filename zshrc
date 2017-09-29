@@ -57,7 +57,7 @@ antigen bundle git
 antigen bundle virtualenv
 antigen bundle screen
 antigen theme gallifrey
-antigen-apply
+antigen apply
 
 def autoquote()
 {
