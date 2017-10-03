@@ -38,6 +38,9 @@ if [ -f "/etc/gentoo-release" ]; then
     alias estimate-update='emerge -DNup @world|genlop -p'
 fi
 
+if [[ -e "$XDG_RUNTIME_DIR/ssh-agent.socket" ]]; then
+	export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 export MOSH_TITLE_NOPREFIX=1
 export EDITOR=vim
